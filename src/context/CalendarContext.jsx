@@ -1,5 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import AddEventModal from "../pages/Calendar/AddEventModal.jsx";
+import EditEventModal from "../pages/Calendar/EditEventModal.jsx";
+import { sortEventsByStart } from "../pages/Calendar/dateUtil.js";
+import dayjs from 'dayjs'
 
 /*
     Example events object
@@ -31,7 +34,8 @@ const initialCalendarContext = {
     deleteEvent: () => {},
     modal: [null, null],
     setModal: () => {},
-    closeModal: () => {}
+    closeModal: () => {},
+    getAllEventsAsArray: () => {}
 }
 
 const CalendarContext = createContext(initialCalendarContext)
@@ -83,15 +87,15 @@ const CalendarContextProvider = ({ children }) => {
         return dateEvents.findIndex(e => e.title === title);
     }
 
-    const updateEvent = (year, month, date, title, newEvent) => {
+    const updateEvent = (oldYMD, oldTitle, newYMD, newEvent) => {
         const newEvents = {...events}
 
-        const i = getIndex(year, month, date, title)
+        const i = getIndex(...oldYMD, oldTitle)
         if (i < 0) return false;
 
         // update
-        newEvents[year][month][date][i] = newEvent;
-        setEvents(newEvents)
+        newEvents[oldYMD[0]][oldYMD[1]][oldYMD[2]].splice(i, 1);
+        addEvent(...newYMD, newEvent)
 
         return true
     }
@@ -109,6 +113,19 @@ const CalendarContextProvider = ({ children }) => {
         return true;
     }
 
+    const getAllEventsAsArray = () => {
+        let result = []
+        for (const year in events) {
+            for (const month in events[year]) {
+                for (const date in events[year][month]) {
+                    result.push(...events[year][month][date])
+                }
+            }
+        }
+        sortEventsByStart(result)
+        return result
+    }
+
     const ctx = {
         events,
         addEvent,
@@ -118,13 +135,15 @@ const CalendarContextProvider = ({ children }) => {
         deleteEvent,
         setModal,
         modal,
-        closeModal: () => setModal([null, null])
+        closeModal: () => setModal([null, null]),
+        getAllEventsAsArray
     }
 
     return (
         <CalendarContext.Provider value={ctx}>
             {children}
             {modal[0] === "addEvent" && <AddEventModal />}
+            {modal[0] === "editEvent" && <EditEventModal />}
         </CalendarContext.Provider>
     )
 }

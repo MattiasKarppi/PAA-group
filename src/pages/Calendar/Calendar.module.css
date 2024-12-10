@@ -82,9 +82,37 @@
 }
 
 .dayEvent {
-    border: 2px solid var(--cal-darker-blue);
-    padding: .25rem;
-    border-radius: .25rem;
+    border: 1px solid var(--cal-darker-blue);
+    padding: 0 0 0 .5rem;
+    margin: 3px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .7rem;
+    width: 100%;
+
+    & img {
+        width: 15px;
+        display: block;
+        filter: invert(1);
+    }
+
+    & > * {
+        display: flex;
+    }
+
+    & button {
+        border-radius: 0;
+        border: 0;
+        background-color: var(--cal-darker-blue);
+        display: block;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(2);
+        }
+    }
 }
 
 .modalHead {

@@ -1,6 +1,7 @@
 import sty from './Calendar.module.css'
 import { useCalendarContext } from '../../context/CalendarContext.jsx';
 import CalendarDayEvent from './CalendarDayEvent.jsx';
+import { sortEventsByStart } from './dateUtil.js';
 
 function CalendarDay({ d, now }) {
     // NO STATE LOGIC ABOVE HERE
@@ -25,6 +26,7 @@ function CalendarDay({ d, now }) {
     }
 
     const dateEvents = ctx.getEvents(year, month, date)
+    sortEventsByStart(dateEvents || [])
 
     return (
         <div className={classes} onClick={promptForNewEvent}>

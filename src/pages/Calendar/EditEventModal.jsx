@@ -1,18 +1,16 @@
 import { useState } from "react";
 import { useCalendarContext } from "../../context/CalendarContext.jsx";
 import dayjs from "dayjs";
-import relativeTime from 'dayjs/plugin/relativeTime'
-dayjs.extend(relativeTime)
 import sty from './Calendar.module.css'
 import EventForm from "./EventForm.jsx";
 
 //                      editing can be the event being edited
-function AddEventModal({ editing = null }) {
+function EditEventModal({ editing = null }) {
 
     const [formError, setFormError] = useState(null)
 
     const ctx = useCalendarContext()
-    const day = ctx.modal[1]
+    const event = ctx.modal[1]
 
     const now = dayjs()
 
@@ -43,10 +41,13 @@ function AddEventModal({ editing = null }) {
         // validate diff
         if (end.diff(start, 'minute') < 5) return setFormError("end must be at least 5 minutes after start");
 
-        ctx.addEvent(
-            start.year(),
-            start.month(),
-            start.date(),
+        // get old date
+        const old = dayjs(`${event.startDate}T${event.startTime}`)
+
+        ctx.updateEvent(
+            [old.year(), old.month(), old.date()], // old date
+            event.title, // old title
+            [start.year(), start.month(), start.date()], // new date
             {
                 title: name,
                 startDate,
@@ -55,7 +56,7 @@ function AddEventModal({ editing = null }) {
                 endTime
             }
         )
-        
+
         ctx.closeModal()
     }
     
@@ -67,13 +68,13 @@ function AddEventModal({ editing = null }) {
         }}>
             <div className="modal">
                 <div className={sty.modalHead}>
-                    <h3>{editing ? "Edit" : "Add"} event</h3>
+                    <h3>Edit event</h3>
                     <button onClick={ctx.closeModal}>
                         <img src="/icons/close.svg" alt="x icon" />
                     </button>
                 </div>
                 <EventForm
-                    d={day}
+                    event={event}
                     handleSubmit={handleSubmit}
                     formError={formError}
                 />
@@ -82,4 +83,4 @@ function AddEventModal({ editing = null }) {
     )
 }
 
-export default AddEventModal;
+export default EditEventModal;

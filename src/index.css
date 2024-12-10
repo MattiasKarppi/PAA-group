@@ -19,6 +19,16 @@ body, button, input, textarea, select, option {
   margin: auto;
   background-color: #e6e6e6;
 }
+html, body, #root {
+  min-height: 100vh;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
 
 /* calendar modal */
 .modal-backdrop {
@@ -36,4 +46,7 @@ body, button, input, textarea, select, option {
 }
 .modal {
   background-color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
