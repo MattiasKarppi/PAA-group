@@ -1,0 +1,94 @@
+:root {
+    --darker: rgba(0, 0, 0, 0.05);
+    --cal-blue: #57d6d6;
+    --cal-darker-blue: #208686;
+    --cal-lighter-blue: #b2ffff;
+}
+
+#calendar {
+
+
+}
+
+#calendarHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: .5rem;
+}
+
+#view {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: .5rem;
+}
+
+.day {
+    aspect-ratio: 1;
+    border-radius: .5rem;
+
+    & h6 {
+        font-size: 0.8rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: .7rem 1rem 1rem .7rem;
+        background-color: var(--cal-darker-blue);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 1rem 0;
+    }
+
+}
+
+.today {
+    outline: 3px solid var(--cal-darker-blue);
+}
+
+.day:not(.nonDay) {
+    cursor: pointer;
+    background-color: var(--cal-blue);
+    transition: all 125ms;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+        background-color: var(--cal-lighter-blue);
+        transform: scale(1.1);
+        box-shadow: .5rem .5rem 15px rgba(0, 0, 0, 0.2);
+    }
+
+}
+
+.plus {
+    width: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nonDay {
+    background-color: var(--darker);
+}
+
+.dayEvent {
+    border: 2px solid var(--cal-darker-blue);
+    padding: .25rem;
+    border-radius: .25rem;
+}
+
+.modalHead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
