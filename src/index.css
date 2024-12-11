@@ -13,9 +13,40 @@ body, button, input, textarea, select, option {
 }
 
 /* overall layout responsiveness */
-#root > * {
+#root > *:not(.modal-backdrop) {
   width: 1200px;
   max-width: calc(100vw - 1rem);
   margin: auto;
   background-color: #e6e6e6;
+}
+html, body, #root {
+  min-height: 100vh;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+
+/* calendar modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background-color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
