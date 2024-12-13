@@ -3,3 +3,17 @@
     align-items: flex-end;
     justify-content: space-between;
 }
+
+#nav {
+    display: flex;
+    gap: 1rem;
+
+    & a {
+        display: block;
+        padding: 1rem 1rem calc(1rem - 5px) 1rem;
+        text-decoration: none;
+        background-color: gray;
+        color: white;
+        border-bottom: 5px solid gray;
+    }
+}
