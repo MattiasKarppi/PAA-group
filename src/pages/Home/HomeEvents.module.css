@@ -1,0 +1,15 @@
+#events {
+    background-color: rgb(191, 207, 207);
+    padding: 1rem;
+    border-radius: .5rem;
+    display: inline-block;
+}
+
+#table {
+    border-collapse: collapse;
+
+    & td, th {
+        padding: .5rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
