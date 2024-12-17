@@ -1,4 +1,6 @@
-function Routine({ routine, setRoutines, i }) {
+ import styles from './Routines.module.css';
+  
+  function Routine({ routine, setRoutines, i }) {
 
     function handleIncrease() {
       routine.repetitions++
@@ -32,11 +34,13 @@ function Routine({ routine, setRoutines, i }) {
         return newRoutines
       })
     }
+    
   return (
-    <div>
+    <div className={styles.routine}>
       Name: {routine.name} <br />
       Priority: {routine.priority} <br />
       Repetitions: 
+     <div className={styles.controls}>
       <button onClick={handleDecrease}>
           -
       </button>
@@ -47,12 +51,13 @@ function Routine({ routine, setRoutines, i }) {
       <button onClick={handleReset}>
         Reset
       </button>
-      <button onClick={handleDelete}>
+      <button onClick={handleDelete} className={styles.deleteButton}>
         Delete
       </button>
 
+     </div>
     </div>
   )
 }
 
-export default Routine
+export default Routine;
