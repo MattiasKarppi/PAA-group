@@ -1,3 +1,4 @@
+import styles from './Routines.module.css';
 
 function HabitForm({setRoutines}) {
   function handleSubmit(event) {
@@ -17,12 +18,12 @@ function HabitForm({setRoutines}) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-       <div className="field">
-        <label htmlFor="Habit-form-name">Name</label>
+    <form onSubmit={handleSubmit} className={styles.form}>
+       <div className={styles.field}>
+        <label htmlFor="Habit-form-name">Task</label>
         <input type="text" id="Habit-form-name" name="name" />
        </div>
-       <div className="field">
+       <div className={styles.field}>
           <label htmlFor="Habit-form-priorty"></label>
           <select id="Habit-form-priority" name="priority">
             <option value="High">High</option>
