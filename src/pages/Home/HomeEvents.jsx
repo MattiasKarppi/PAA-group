@@ -11,8 +11,10 @@ function HomeEvents() {
             <h3>Upcoming events</h3>
             <table id={sty.table}>
                 <thead>
-                    <th>Title</th>
-                    <th>Start date</th>
+                    <tr>
+                        <th>Title</th>
+                        <th>Start date</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {upcomingEvents.map(evt => {

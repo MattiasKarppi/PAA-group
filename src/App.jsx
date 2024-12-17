@@ -20,9 +20,9 @@ function App() {
     <>
       <Header />
       <main>
-        {/* Router here */}
+
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home tasks={tasks}/>}/>
           <Route path="/calendar" element={<CalendarPage />}/>
           <Route path="/tasks" element={<Tasks tasks={tasks} setTasks={setTasks}/>}/>
           <Route path="/task/:i" element={<EditTaskPage tasks={tasks} setTasks={setTasks}/>}/>

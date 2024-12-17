@@ -58,9 +58,9 @@ function Tasks({ tasks, setTasks }) {
                         Status selector
                         <br />
                         <select name="status">
-                            <option>In progress</option>
-                            <option>Not yet started</option>
-                            <option>Done</option>
+                            <option value="in progress">In progress</option>
+                            <option value="not started">Not yet started</option>
+                            <option value="done">Done</option>
                         </select>
                     </label>
                 </div>
