@@ -1,0 +1,11 @@
+
+
+.deleteButton {
+    background-color: red;
+  }
+  
+  .deleteButton:hover {
+    background-color: rgb(194, 3, 3);
+    color: black;
+  }
+  

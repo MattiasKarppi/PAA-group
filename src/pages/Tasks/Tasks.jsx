@@ -1,5 +1,5 @@
-import './Tasks.css'
 import Task from './Task'
+import styles from './Tasks.module.css'
 
 
 function Tasks({ tasks, setTasks }) {
@@ -35,7 +35,7 @@ function Tasks({ tasks, setTasks }) {
         <>
             <form onSubmit={handleSubmit}>
 
-                <div className='Field'>
+                <div className={styles.field}>
                     <label>
                         Enter your Task/Todo
                         <input type="text" name='title' />
@@ -44,7 +44,7 @@ function Tasks({ tasks, setTasks }) {
 
                 <br />
 
-                <div className='Field'>
+                <div className={styles.field}>
                     <label>
                         Description
                         <input type="text" name='description' />
@@ -53,7 +53,7 @@ function Tasks({ tasks, setTasks }) {
 
                 <br />
 
-                <div className='Field'>
+                <div className={styles.field}>
                     <label>
                         Status selector
                         <br />
@@ -67,7 +67,7 @@ function Tasks({ tasks, setTasks }) {
 
                 <br />
 
-                <div className='Field'>
+                <div className={styles.field}>
                     <label>
                         <h3>Time estimate</h3>
                         <br />
@@ -80,7 +80,7 @@ function Tasks({ tasks, setTasks }) {
                 
                 <br />
 
-                <div className="Field">
+                <div className={styles.field}>
                     <label>
                         Category
                             <br />
@@ -95,7 +95,7 @@ function Tasks({ tasks, setTasks }) {
 
                 <br />
 
-                <div className='Field'>
+                <div className={styles.field}>
                     <label>
                         Due date
                         <br />
