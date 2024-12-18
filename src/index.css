@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Lexend:wght@100..900&display=swap');
+/* font */
+
+/* routines css */
+@import url("./pages/Routines/Routines.css");
+
 * {
   box-sizing: border-box;
+}
+
+/* variables */
+:root {
+  --home: gray;
+  --event: #3399ff;
+  --task: #00cc00;
+  --routine: #ff9933;
+}
+
+body {
+  background-color: #111e27;
 }
 
 /* reset margins */
@@ -9,7 +27,7 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 /* fonts */
 body, button, input, textarea, select, option {
-  font-family: sans-serif;
+  font-family: Gabarito, sans-serif;
 }
 
 /* overall layout responsiveness */
@@ -17,7 +35,7 @@ body, button, input, textarea, select, option {
   width: 1200px;
   max-width: calc(100vw - 1rem);
   margin: auto;
-  background-color: #e6e6e6;
+  background-color: #69cde9;
 }
 html, body, #root {
   min-height: 100vh;
@@ -28,6 +46,7 @@ html, body, #root {
 }
 main {
   flex-grow: 1;
+  padding: 2rem 1rem;
 }
 
 /* calendar modal */
@@ -45,8 +64,18 @@ main {
   align-items: center;
 }
 .modal {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 1rem;
   border-radius: .5rem;
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* header */
+header {
+
+  border-bottom: 2px solid gray;
+}
+
+header h1 {
+  padding: 1rem;
 }

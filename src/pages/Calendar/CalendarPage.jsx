@@ -9,7 +9,6 @@ function CalendarPage() {
 
     return (
         <div className="page" id="calendar-page">
-            <h2>Calendar page</h2>
             <Calendar />
         </div>
     )

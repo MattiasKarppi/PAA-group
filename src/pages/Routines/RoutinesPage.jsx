@@ -46,7 +46,7 @@ function RoutinesPage({ routines, setRoutines }) {
   })
   
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="routines-page">
       <h3>Routines Page</h3>
       <HabitForm setRoutines={setRoutines} />
       <div className ={styles.controlsContainer}>

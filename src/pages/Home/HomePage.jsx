@@ -29,28 +29,36 @@ function Home({ tasks, routines }) {
             <HomeCard 
                 arr={unfinishedTasks} 
                 title="Next on the agenda"
+                icon="task"
                 entries={item => ([
                     ['Name', item.title],
                     ['Due', item.date]
                  ])} 
+                 link="/tasks"
             />
 
             {/* routines */}
             <HomeCard 
                 arr={routinesWithMostRepetitions} 
+                icon="routine"
                 title="Your daily routine"
                 entries={item => ([
-                    ['Name', item.name]
+                    ['Name', item.name],
+                    ['Rep.', item.repetitions],
+                    ['Priority', item.priority]
                  ])} 
+                 link="/routines"
             />
 
             {/* events */}
             <HomeCard 
                 arr={upcoming3Events} 
                 title="Upcoming events"
+                icon="event"
                 entries={item => ([
                     ['Name', item.title]
                  ])} 
+                 link="/calendar"
             />
 
         </div>
