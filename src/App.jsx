@@ -11,6 +11,7 @@ import RoutinesPage from './pages/Routines/RoutinesPage.jsx'
 function App() {
 
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || [])
+  const [routines, setRoutines] = useState(JSON.parse(localStorage.getItem('routines')) || [])
 
   useEffect(()=>{
     localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -22,11 +23,11 @@ function App() {
       <main>
 
         <Routes>
-          <Route path="/" element={<Home tasks={tasks}/>}/>
+          <Route path="/" element={<Home tasks={tasks} routines={routines}/>}/>
           <Route path="/calendar" element={<CalendarPage />}/>
           <Route path="/tasks" element={<Tasks tasks={tasks} setTasks={setTasks}/>}/>
           <Route path="/task/:i" element={<EditTaskPage tasks={tasks} setTasks={setTasks}/>}/>
-          <Route path="/routines" element={<RoutinesPage />}/>
+          <Route path="/routines" element={<RoutinesPage routines={routines} setRoutines={setRoutines} />}/>
         </Routes>
       </main>
     </>

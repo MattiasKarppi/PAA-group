@@ -1,0 +1,22 @@
+#homeCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.homeCard {
+    padding: .5rem;
+    margin: .5rem;
+    background-color: beige;
+    border-radius: .5rem;
+
+    & table {
+        border-collapse: collapse;
+        width: 100%;
+
+        & th, td {
+            padding: .5rem;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+}

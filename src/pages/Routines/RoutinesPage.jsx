@@ -3,9 +3,8 @@ import HabitForm from "./HabitForm"
 import Routine from "./Routine"
 import styles from './Routines.module.css';
 
-function RoutinesPage() {
+function RoutinesPage({ routines, setRoutines }) {
 
-  let [routines, setRoutines] = useState(JSON.parse(localStorage.getItem("routines")) || [])
   let [desc, setDesc] = useState(false)
   let [filterPriority, setFilterPriority] = useState("All")
 
