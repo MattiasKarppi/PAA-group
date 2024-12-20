@@ -27,7 +27,7 @@ function Home({ tasks, routines }) {
 
     return (
         <>
-            <Auth />
+            {/* <Auth /> */}
             <div id={style.homeCards}>
                 {/* tasks */}
                 <HomeCard 

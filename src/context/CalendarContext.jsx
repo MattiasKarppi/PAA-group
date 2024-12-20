@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import AddEventModal from "../pages/Calendar/AddEventModal.jsx";
 import EditEventModal from "../pages/Calendar/EditEventModal.jsx";
 import { sortEventsByStart } from "../pages/Calendar/dateUtil.js";
-import dayjs from 'dayjs'
+import { useAuthContext } from "./AuthContext.jsx";
 
 /*
     Example events object
@@ -46,12 +46,16 @@ export const useCalendarContext = () => {
 
 const CalendarContextProvider = ({ children }) => {
 
+    const auth = useAuthContext()
     const [events, setEvents] = useState(initialCalendarContext.events)
     const [modal, setModal] = useState([null, null])
 
-    // save to localStorage whenever events changes
+    // when events updates
     useEffect(()=>{
+        // save events to local storage
         localStorage.setItem(LS_KEY, JSON.stringify(events))
+
+        
     }, [events])
 
     const addEvent = (year, month, date, event) => {
