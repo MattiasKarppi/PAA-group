@@ -2,6 +2,7 @@ import Task from './Task';
 import styles from './Tasks.module.css';
 import { useState } from 'react';
 
+
 function Tasks({ tasks, setTasks }) {
     const [statusFilter, setStatusFilter] = useState(""); // To filter by status
     const [categoryFilter, setCategoryFilter] = useState(""); // To filter by category
@@ -93,9 +94,9 @@ function Tasks({ tasks, setTasks }) {
                         Status selector
                         <br />
                         <select name="status">
-                            <option value="in progress">In progress</option>
-                            <option value="not started">Not yet started</option>
-                            <option value="done">Done</option>
+                            <option value="In progress">In progress</option>
+                            <option value="Not yet started">Not yet started</option>
+                            <option value="Done">Done</option>
                         </select>
                     </label>
                 </div>
@@ -152,7 +153,7 @@ function Tasks({ tasks, setTasks }) {
 
                 <br />
 
-                <button>Add task</button>
+                <button className={styles.TasksButton}>Add task</button>
             </form>
 
             {/* Filter and sort options */}

@@ -1,0 +1,42 @@
+.backButton {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.backButton:hover {
+  background-color: #0056b3;
+}
+
+.deleteButton {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #dc3545; /* Red */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.deleteButton:hover {
+  background-color: #a71d2a;
+}
+/* Specifik regel för knappen */
+button.saveButton {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #28a745; /* Grön */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  border: none; /* För att matcha layout */
+}
+
+button.saveButton:hover {
+  background-color: #218838;
+}

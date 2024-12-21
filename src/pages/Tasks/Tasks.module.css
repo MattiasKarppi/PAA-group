@@ -1,10 +1,16 @@
+.TasksButton {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745; /* Green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
 
-.deleteButton {
-    background-color: red;
-  }
-  
-  .deleteButton:hover {
-    background-color: rgb(194, 3, 3);
-    color: black;
-  }
-  
+.TasksButton:hover {
+    background-color: #218838;
+
+
+
+}

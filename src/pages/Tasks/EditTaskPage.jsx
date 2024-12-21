@@ -1,5 +1,8 @@
+import "./EditTaskPage.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+
 
 function EditTaskPage({ tasks, setTasks }) {
     const params = useParams();
@@ -54,11 +57,11 @@ function EditTaskPage({ tasks, setTasks }) {
                 Delete
             </button>
 
-            <button onClick={backTasks}>
+            <button onClick={backTasks} className="backButton">
                 Back to Tasks
             </button>
 
-            <form onSubmit={saveTask}>
+            <form onSubmit={saveTask} className="saveButton">
                 <div>
                     <label>
                         Title:
@@ -124,7 +127,7 @@ function EditTaskPage({ tasks, setTasks }) {
                             <option value="Entertainment">Entertainment</option>
                         </select>
                         <br />
-                        <button type="submit">
+                        <button type="submit" className="saveButton">
                             Save changes
                         </button>
                     </label>
