@@ -45,7 +45,6 @@ function EditTaskPage({ tasks, setTasks }) {
         newTasks[params.i] = updatedTask;
 
         setTasks(newTasks);
-
         navigate("/tasks");
     };
 
@@ -96,10 +95,22 @@ function EditTaskPage({ tasks, setTasks }) {
                         <br />
                         Time:
                         <input
-                            type="time"
+                            type="range"
+                            min="1"
+                            max="24"
                             value={time}
                             onChange={(e) => setTime(e.target.value)}
+                            style={{
+                                width: "100%",
+                                appearance: "none",
+                                background: "#ddd",
+                                height: "6px",
+                                borderRadius: "3px",
+                                outline: "none",
+                            }}
                         />
+                        <br />
+                        <span>{time} hours</span>
                         <br />
                         Category:
                         <select
