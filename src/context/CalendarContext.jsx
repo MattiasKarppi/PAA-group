@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import AddEventModal from "../pages/Calendar/AddEventModal.jsx";
 import EditEventModal from "../pages/Calendar/EditEventModal.jsx";
 import { sortEventsByStart } from "../pages/Calendar/dateUtil.js";
-import { useAuthContext } from "./AuthContext.jsx";
+// import { useAuthContext } from "./AuthContext.jsx";
 
 /*
     Example events object
@@ -46,7 +46,7 @@ export const useCalendarContext = () => {
 
 const CalendarContextProvider = ({ children }) => {
 
-    const auth = useAuthContext()
+    // const auth = useAuthContext()
     const [events, setEvents] = useState(initialCalendarContext.events)
     const [modal, setModal] = useState([null, null])
 
@@ -55,8 +55,10 @@ const CalendarContextProvider = ({ children }) => {
         // save events to local storage
         localStorage.setItem(LS_KEY, JSON.stringify(events))
 
-        
+        // if logged in, save user
+        // auth.updateUser({events: events.events})
     }, [events])
+
 
     const addEvent = (year, month, date, event) => {
         const newEvents = {...events}

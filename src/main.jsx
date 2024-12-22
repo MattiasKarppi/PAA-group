@@ -9,11 +9,11 @@ import AuthContextProvider from './context/AuthContext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
-      <AuthContextProvider>
+      {/* <AuthContextProvider> */}
         <CalendarContextProvider>
           <App />
         </CalendarContextProvider>
-      </AuthContextProvider>
+      {/* </AuthContextProvider> */}
     </HashRouter>
   </StrictMode>,
 )

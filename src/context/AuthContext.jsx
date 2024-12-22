@@ -49,14 +49,17 @@ const AuthContextProvider = ({children}) => {
                 // set user
                 setUser(newUser)
             },
-            updateUser(id, update) {
+            updateUser(update) {
+                // if not logged in, cancel
+                if (!user) return;
+
                 // update user
                 const newUser = {...user, ...update} 
                 setUser(newUser)
 
                 // update user in users
                 const copy = [...users]
-                const i = copy.findIndex(u => u.id === id)
+                const i = copy.findIndex(u => u.id === user.id)
                 copy[i] = newUser
                 setUsers(copy)
             },

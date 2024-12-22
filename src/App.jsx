@@ -8,14 +8,24 @@ import EditTaskPage from './pages/Tasks/EditTaskPage.jsx'
 import { useState, useEffect } from 'react'
 import RoutinesPage from './pages/Routines/RoutinesPage.jsx'
 
+// import { useAuthContext } from './context/AuthContext.jsx'
+
 function App() {
+
+  // const auth = useAuthContext()
 
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || [])
   const [routines, setRoutines] = useState(JSON.parse(localStorage.getItem('routines')) || [])
 
   useEffect(()=>{
+    // save to local storage
     localStorage.setItem('tasks', JSON.stringify(tasks))
-  }, [tasks])
+    localStorage.setItem('routines', JSON.stringify(routines))
+    
+    // update user
+    // auth.updateUser({ tasks, routines })
+  }, [tasks, routines])
+
 
   return (
     <>

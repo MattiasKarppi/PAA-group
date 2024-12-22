@@ -25,7 +25,7 @@ function Nav() {
                             gap: "0.5rem"
                         }}
                     >
-                        <img src={`/icons/${item.icon}.svg`} alt={`${item.icon} icon`} />
+                        <img src={`./icons/${item.icon}.svg`} alt={`${item.icon} icon`} />
                         {item.text}
                     </Link>
                 )

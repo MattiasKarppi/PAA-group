@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styles from './Auth.module.css'
 import { useAuthContext } from "../../context/AuthContext"
+import Quote from "./Quote"
 
 function Auth() {
 
@@ -45,6 +46,7 @@ function Auth() {
     }
 
     if (auth.user) return <>
+        <Quote />
         <button onClick={auth.logOut}>
             Log out
         </button>

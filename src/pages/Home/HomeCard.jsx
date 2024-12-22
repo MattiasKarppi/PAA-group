@@ -5,7 +5,7 @@ function HomeCard({ arr, entries, title, bg, icon, link }) {
     return (
         <div className={styles.homeCard} style={{ backgroundColor: bg }}>
             <h3>
-                <img src={`/icons/${icon}.svg`} alt={`${icon} icon`} />
+                <img src={`./icons/${icon}.svg`} alt={`${icon} icon`} />
                 {title}
             </h3>
             {arr.map((item, i) => {

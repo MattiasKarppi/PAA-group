@@ -2,7 +2,7 @@ import { jsx } from "react/jsx-runtime";
 import { useCalendarContext } from "../../context/CalendarContext";
 import style from './Home.module.css'
 import HomeCard from "./HomeCard";
-import Auth from "./Auth";
+// import Auth from "./Auth";
 
 function Home({ tasks, routines }) {
 
