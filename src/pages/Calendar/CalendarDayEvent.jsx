@@ -16,13 +16,13 @@ function CalendarDayEvent({ year, month, date, event }) {
                     e.stopPropagation()
                     ctx.setModal(["editEvent", ctx.getEvent(year, month, date, event.title)])
                 }}>
-                    <img src="/icons/edit.svg" alt="pencil icon" />
+                    <img src="./icons/edit.svg" alt="pencil icon" />
                 </button>
                 <button onClick={e => {
                     e.stopPropagation()
                     handleDelete()
                 }}>
-                    <img src="/icons/delete.svg" alt="trash can icon" />
+                    <img src="./icons/delete.svg" alt="trash can icon" />
                 </button>
             </div>
         </div>

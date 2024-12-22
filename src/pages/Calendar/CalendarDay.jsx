@@ -41,7 +41,7 @@ function CalendarDay({ d, now }) {
                     event={e}
                 />)
             })}
-            <img className={sty.plus} src="/icons/plus.svg" alt="plus icon" />
+            <img className={sty.plus} src="./icons/plus.svg" alt="plus icon" />
         </div>
     )
 }
