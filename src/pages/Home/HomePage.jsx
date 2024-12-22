@@ -19,7 +19,7 @@ function Home({ tasks, routines }) {
         .slice(0, 3);
 
     const unfinishedTasks = tasks
-        .filter(t => t.status !== "done")
+        .filter(t => t.status !== "Done")
         .sort((a, b) => {
             return a.date.localeCompare(b.date)
         })
