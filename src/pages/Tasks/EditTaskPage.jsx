@@ -1,5 +1,8 @@
+import "./EditTaskPage.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+
 
 function EditTaskPage({ tasks, setTasks }) {
     const params = useParams();
@@ -45,7 +48,6 @@ function EditTaskPage({ tasks, setTasks }) {
         newTasks[params.i] = updatedTask;
 
         setTasks(newTasks);
-
         navigate("/tasks");
     };
 
@@ -55,11 +57,11 @@ function EditTaskPage({ tasks, setTasks }) {
                 Delete
             </button>
 
-            <button onClick={backTasks}>
+            <button onClick={backTasks} className="backButton">
                 Back to Tasks
             </button>
 
-            <form onSubmit={saveTask}>
+            <form onSubmit={saveTask} className="saveButton">
                 <div>
                     <label>
                         Title:
@@ -96,10 +98,22 @@ function EditTaskPage({ tasks, setTasks }) {
                         <br />
                         Time:
                         <input
-                            type="time"
+                            type="range"
+                            min="1"
+                            max="24"
                             value={time}
                             onChange={(e) => setTime(e.target.value)}
+                            style={{
+                                width: "100%",
+                                appearance: "none",
+                                background: "#ddd",
+                                height: "6px",
+                                borderRadius: "3px",
+                                outline: "none",
+                            }}
                         />
+                        <br />
+                        <span>{time} hours</span>
                         <br />
                         Category:
                         <select
@@ -113,7 +127,7 @@ function EditTaskPage({ tasks, setTasks }) {
                             <option value="Entertainment">Entertainment</option>
                         </select>
                         <br />
-                        <button type="submit">
+                        <button type="submit" className="saveButton">
                             Save changes
                         </button>
                     </label>
